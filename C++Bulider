@@ -1,0 +1,18 @@
+{
+    
+    "cmd": ["g++.exe", "${file}", "-o", "${file_path}/${file_base_name}"],
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "working_dir": "${file_path}",
+    "selector": "source.c, source.cpp",
+    "encoding":"gbk", 
+    "encoding": "cp936",
+    "variants":
+    [
+        {
+            "name": "Run",            
+            "cmd": [ "${file_path}/${file_base_name}.exe"],
+            "shell": true,
+            "cmd" : ["start", "cmd", "/k", "${file_path}/${file_base_name} &&echo. & pause && exit"]
+        }
+    ]
+}
